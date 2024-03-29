@@ -1,20 +1,22 @@
 import { StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 import PropTypes from 'prop-types';
 
-function RandomNumber({ number }) {
+function RandomNumber({ id, number, isDisabled, onPress }) {
 
     const propTypes = {
-        number: PropTypes.number.isRequired
+        number: PropTypes.number.isRequired,
+        isDisabled: PropTypes.bool.isRequired,
+        onPress: PropTypes.func.isRequired
     };
 
     const handlePress = () => {
-        Alert.alert(String(number));
-        console.log(number);
-    }
+      if (isDisabled) {return};
+      onPress(id);
+    };
 
     return (
         <TouchableOpacity onPress={handlePress}>
-            <Text style={styles.random}>{number}</Text>
+            <Text style={[styles.random, isDisabled && styles.disabled]}>{number}</Text>
         </TouchableOpacity>
         
     );
@@ -32,6 +34,9 @@ const styles = StyleSheet.create({
     width: 120,
     height: 60,
     fontSize: 30
+  },
+  disabled: {
+    opacity: 0.4
   }
 })
 
