@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderColor: '#1b3c73',
     borderWidth: 2,
-    borderRadius: 15,
+    borderRadius: 20,
     textAlign: 'center',
     textAlignVertical: 'center',
     margin: 20,
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
   disabled: {
     opacity: 0.4
   }
-})
+});
 
 export default RandomNumber;
