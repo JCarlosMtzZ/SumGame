@@ -14,7 +14,6 @@ function Game({ randomNumberCount, initialSeconds, onPlayAgain, score }) {
     onPlayAgain: PropTypes.func.isRequired,
     score: PropTypes.number.isRequired
   };
-
   
   const [selectedIds, setSelectedIds] = useState([]);
   const [randomNumbers, setRandomNumbers] = useState([]);
@@ -79,6 +78,7 @@ function Game({ randomNumberCount, initialSeconds, onPlayAgain, score }) {
     if (gameStatus !== 'PLAYING' && intervalId) {
       clearInterval(intervalId);
     }
+    
   }, [remainingSeconds]);
 
   useEffect(() => {
@@ -86,6 +86,7 @@ function Game({ randomNumberCount, initialSeconds, onPlayAgain, score }) {
     if (gameStatus !== 'PLAYING' && intervalId) {
       clearInterval(intervalId);
     }
+    
   }, [selectedIds]);
   
 
